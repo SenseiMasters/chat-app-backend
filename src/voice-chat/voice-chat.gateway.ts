@@ -41,4 +41,8 @@ export class VoiceChatGateway {
   handleAudioStream(client: Socket, data: any) {
     client.broadcast.emit('audioStream', data);
   }
+  @SubscribeMessage('audioStreamGap')
+  handleAudioStreamGap(client: Socket, data: any) {
+    client.broadcast.emit('audioStreamGap', data);
+  }
 }
